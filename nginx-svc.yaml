@@ -1,8 +1,14 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-namePrefix: kustomize-
-
-resources:
-- nginx-deployment.yaml
-- nginx-svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+labels:
+  app: nginx
+name: nginx
+spec:
+ports:
+- port: 80
+  protocol: TCP
+  targetPort: 80
+selector:
+  app: nginx
+type: ClusterIP
