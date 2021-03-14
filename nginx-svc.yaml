@@ -11,4 +11,4 @@ ports:
   targetPort: 80
 selector:
   app: nginx
-type: ClusterIP
+
